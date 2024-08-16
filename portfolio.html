@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timmy's Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        /* Custom Styles for Portfolio */
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px; /* 16px gutter */
+        }
+
+        .portfolio-item {
+            flex: 1 1 calc(33.333% - 16px); /* 3 columns with 16px gutter */
+            box-sizing: border-box;
+            position: relative;
+            border: 1px solid #ddd;
+            padding: 16px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .portfolio-item h3 {
+            margin: 8px 0;
+            font-size: 1.2em;
+        }
+
+        .portfolio-item p {
+            color: #666;
+        }
+
+        .portfolio-item .modal-button {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: #204483;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Lightbox styles */
+        .mfp-img {
+            max-width: 100%;
+        }
+
+        /* Modal popup styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .modal-content .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style> 
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+          <img src="images/tc timmycarelogo.png" alt="Tclogo">
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="secondary-nav">
+            <button>Contact Info</button>
+            <div class="dropdown">
+              <a href="mailto:timmy,bad@gmai.com">Email</a>
+              <a href="tel:+1234567890">Phone</a>
+              <a href="#">BCIT Address</a>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <img src="images/andrew-kliatskyi-2bfHAKhGn4g-unsplash.jpg" alt="hero-section image">
+        <div class="hero-text">
+            <h1 class="animate__animated animate__fadeInDown">Welcome to Timmy's World</h1>
+            <p class="animate__animated animate__fadeInUp">My Portfolio</p>
+        </div>
+    </header>
+    <section class="portfolio-section">
+        <h2>Portfolio</h2>
+     <div class="portfolio-container"> 
+        <div class="portfolio-item" data-aos="fade-up">
+            <a href="images/web-scripting.jpg" data-fancybox="gallery">
+                <img src="images/971.jpg" alt="Web Scripting">
+            </a>
+            <h3>Web Scripting</h3>
+            <p>Developed dynamic web applications using JavaScript, HTML, and CSS.</p>
+            <button class="modal-button" data-modal="modal1">More Info</button>
+        </div>
+        <div class="portfolio-item" data-aos="fade-up">
+            <a href="images/video-editing.jpg" data-fancybox="gallery">
+                <img src="images/young-freelancer-editing-footage-software-working-edit-video-montage-with-color-grading-audio-effects-sound-film-production-content-making-creative-movie-computer.jpg" alt="Video Editing">
+            </a>
+            <h3>Video Editing</h3>
+            <p>Edited video content for various projects, including promotional and training videos.</p>
+            <button class="modal-button" data-modal="modal2">More Info</button>
+        </div>
+        <div class="portfolio-item" data-aos="fade-up">
+            <a href="images/illustrator.jpg" data-fancybox="gallery">
+                <img src="images/5073684.jpg" alt="Illustrator">
+            </a>
+            <h3>Illustrator</h3>
+            <p>Description of Illustrator projects and skills.</p>
+            <button class="modal-button" data-modal="modal3">More Info</button>
+        </div>
+        <div class="portfolio-item" data-aos="fade-up">
+            <a href="images/ui-ux-design.jpg" data-fancybox="gallery">
+                <img src="images/5363269.jpg" alt="UI/UX Design">
+            </a>
+            <h3>UI/UX Design</h3>
+            <p>Description of UI/UX Design projects and skills.</p>
+            <button class="modal-button" data-modal="modal4">More Info</button>
+        </div>
+        <div class="portfolio-item" data-aos="fade-up">
+            <a href="images/mobile-design.jpg" data-fancybox="gallery">
+                <img src="images/representations-user-experience-interface-design.jpg" alt="Mobile Design">
+            </a>
+            <h3>Mobile Design</h3>
+            <p>Description of Mobile Design projects and skills.</p>
+            <button class="modal-button" data-modal="modal5">More Info</button>
+        </div>
+        <div class="portfolio-item" data-aos="fade-up">
+            <a href="images/project-management.jpg" data-fancybox="gallery">
+                <img src="images/43013.jpg" alt="Project Management">
+            </a>
+            <h3>Project Management</h3>
+            <p>Description of Project Management projects and skills.</p>
+            <button class="modal-button" data-modal="modal6">More Info</button>
+        </div>
+        <div class="portfolio-item" data-aos="fade-up">
+            <a href="images/social-media-design.jpg" data-fancybox="gallery">
+                <img src="images/close-up-man-with-professional-camera.jpg" alt="Social Media Design">
+            </a>
+            <h3>Social Media Design</h3>
+            <p>Description of Social Media Design projects and skills.</p>
+            <button class="modal-button" data-modal="modal7">More Info</button>
+        </div>
+     </div>    
+    </section>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal1">&times;</span>
+            <h2>Web Scripting</h2>
+            <img src="images/971.jpg" alt="Web Scripting">
+            <p>In-depth description about Web Scripting.</p>
+        </div>
+    </div>
+    
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal2">&times;</span>
+            <h2>Video Editing</h2>
+            <img src="images/young-freelancer-editing-footage-software-working-edit-video-montage-with-color-grading-audio-effects-sound-film-production-content-making-creative-movie-computer.jpg" alt="Video Editing">
+            <p>In-depth description about Video Editing.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal3">&times;</span>
+            <h2>Illustrator</h2>
+            <img src="images/5073684.jpg" alt="Illustrator">
+            <p>In-depth description about Illustrator projects.</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal4">&times;</span>
+            <h2>UI/UX Design</h2>
+            <img src="images/5363269.jpg" alt="UI/UX Design">
+            <p>In-depth description about UI/UX Design projects.</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal5">&times;</span>
+            <h2>Mobile Design</h2>
+            <img src="images/representations-user-experience-interface-design.jpg" alt="Mobile Design">
+            <p>In-depth description about Mobile Design projects.</p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal6">&times;</span>
+            <h2>Project Management</h2>
+            <img src="images/43013.jpg" alt="Project Management">
+            <p>In-depth description about Project Management projects.</p>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal7">&times;</span>
+            <h2>Social Media Design</h2>
+            <img src="images/social-media-design.jpg" alt="Social Media Design">
+            <p>In-depth description about Social Media Design projects.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/tc timmycarelogo-white.png" alt="TC Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+                <div id="map" style="height: 200px;"></div>
+                <p>&copy; 2024 Timmy's Digital Portfolio. All rights reserved.</p>
+            </div>
+        </div>    
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize AOS
+            AOS.init();
+
+            // Initialize lightbox gallery
+            $('[data-fancybox="gallery"]').magnificPopup({ type: 'image' });
+
+            // Modal popup functionality
+            $('.modal-button').on('click', function() {
+                var modalId = $(this).data('modal');
+                $('#' + modalId).show();
+            });
+
+            $('.close').on('click', function() {
+                var modalId = $(this).data('modal');
+                $('#' + modalId).hide();
+            });
+
+            $(window).on('click', function(event) {
+                if ($(event.target).hasClass('modal')) {
+                    $(event.target).hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
